@@ -1,0 +1,25 @@
+[package]
+name = "rs-doq"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.22"
+directories-next = "2"
+domain = "0.6.1"
+# Enables futures::io::{AsyncRead, AsyncWrite} support for streams
+futures-io = { version = "0.3.19" }
+# Implements futures::Stream for async streams such as `Incoming`
+futures-core = { version = "0.3.19" }
+futures-util = "0.3"
+quinn = { version = "0.8.0", features = ["tls-rustls"] }
+rcgen = "0.8"
+rustls = { version = "0.20", default-features = true, features = ["quic"] }
+rustls-pemfile = "0.2.1"
+structopt = "0.3.0"
+tokio = { version = "1.0.1", features = ["macros", "rt", "rt-multi-thread", "time", "sync"] }
+tracing = "0.1.10"
+tracing-futures = { version = "0.2.0", default-features = false, features = ["std-future"] }
+tracing-subscriber = { version = "0.3.0", default-features = false, features = ["env-filter", "fmt", "ansi", "time", "local-time"] }
